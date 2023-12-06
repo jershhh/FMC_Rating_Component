@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overpass/3.0.5/overpass-webfont/overpass.min.css" integrity="sha512-/NSS/idSg7HDgASRxV/pSc4i+ZTsO9KDAaVp4RNvWcYcrgqZFy2ZKWCHw5zcoxB1+t+Z7oI3M6XL0qkCHdetqg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+ * {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+ }
+
+    body {
+      background-color: #141519;
+      text-align:left;
+      font-family: 'Overpass';
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    }
+
+h2 {
+  color: hsl(0, 0%, 100%);
+  margin-bottom:10px;
+}
+
+p {
+  color: hsl(217, 12%, 63%);
+  font-size: 15px;
+}
+
+form {
+  list-style-type: none;
+    color: hsl(217, 12%, 63%);
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    border:0;
+    flex-flow:wrap;
+}
+
+form label span {
+  background-color: #262F38;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    padding: 13px;
+    border-radius: 130px;
+    cursor:pointer;
+}
+
+input[type="radio"] {
+  display:none;
+}
+
+input[type="radio"]:checked + span {
+ background-color:hsl(25, 97%, 53%);
+ color: #FFFFFF;
+}
+
+form label span:hover {
+  background-color: hsl(217, 12%, 63%);
+  color:#FFFFFF;
+  opacity: 1;
+  transition: all .2s ease-in;
+}
+
+button {
+  width:100%;
+ background-color: hsl(25, 97%, 53%);
+ color: #FFF;
+ text-decoration:none;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ border-radius:130px;
+ padding:15px;
+ text-transform: uppercase;
+ letter-spacing:2px;
+ font-weight:bold;
+  transition: all .2s ease-in;
+  border:0;
+  margin-top:20px;
+  cursor:pointer;
+}
+
+button:hover {
+  background-color: #FFF;
+ color: hsl(25, 97%, 53%); 
+ opacity: 1;
+  transition: all .2s ease-in;
+}
+
+#star-container {
+ border-radius:200px;
+ padding:15px;
+ background: #262F38;
+ margin-left:0;
+ width:50px;
+}
+
+.thankyou-icon {
+  width: 200px;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+.star-icon {
+  width:20px;
+}
+
+.confirm {
+background-color: #262F38;
+color:hsl(25, 97%, 53%);
+padding:5px 10px;
+border-radius:100px;
+width:auto;
+margin: 10px auto;
+text-align:center;
+}
+
+.thankyou {
+text-align:center;
+
+}
+
+.hidden {
+  display:none;
+}
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    div {
+      padding:30px;
+      margin:10px auto;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #202632 24.45%, #171E28 100%);
+      max-width:400px;
+      display:flex;
+      flex-flow:column;
+    }
+  </style>
+
+
+
+</head>
+<body>
+
+  <!-- Rating state start -->
+<div class="survey">
+  <div id="star-container">
+    <img class="star-icon" src="./images/icon-star.svg">
+  </div>
+  
+  <h2>How did we do?</h2>
+
+  <p>Please let us know how we did with your support request. All feedback is appreciated 
+    to help us improve our offering!</p>
+
+  <form class="form">
+    <label>
+      <input type="radio" name="rating-group" value="1"/>
+      <span>1</span>
+    </label>
+    <label>
+      <input type="radio" name="rating-group" value="2"/>
+      <span>2</span>
+    </label>
+    <label>
+      <input type="radio" name="rating-group" value="3"/>
+      <span>3</span>
+    </label>
+    <label>
+      <input type="radio" name="rating-group" value="4"/>
+      <span>4</span>
+    </label>
+    <label>
+      <input type="radio" name="rating-group" value="5"/>
+      <span>5</span>
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+
+</div>
+  <!-- Rating state end -->
+
+  <!-- Thank you state start -->
+<div class="thankyou hidden">
+  <img class="thankyou-icon" src="./images/illustration-thank-you.svg">
+  <p class="confirm">You selected <!-- Add rating here --> out of 5</p>
+
+  <h2>Thank you!</h2>
+
+  <p>We appreciate you taking the time to give a rating. If you ever need more support, 
+    don’t hesitate to get in touch!</p>
+</div>
+  <!-- Thank you state end -->
+
+  <!--
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+-->
+
+<script src="script.js"></script>
+</body>
+</html>
